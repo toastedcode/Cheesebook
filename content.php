@@ -73,7 +73,7 @@ HEREDOC;
 <<<HEREDOC
       <div class="sidebar-div">
          <div class="ad-div"><img src="./images/ads/concert-oh.jpg"/></div>
-         <div class="unused-ad-div">Your ad here</div>
+         <div class="ad-div" style="cursor:pointer;"><img src="./images/ads/etchessera.jpg" onclick="window.location.href='http://www.etchessera.com'"/></div>
          <div class="unused-ad-div">Your ad here</div>
       </div>
 HEREDOC;

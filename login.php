@@ -15,7 +15,7 @@ class LoginPage
       echo
 <<<HEREDOC
       <div class="header-div">
-         <img width="100" src="./images/cheesebooklogo.png"/>
+         <img width="100" src="./images/cheesebooklogo.png" onclick="window.location.href='https://github.com/toastedcode/Cheesebook'"/>
          <span class="page-title">Cheesebook</span>
       </div>
 HEREDOC;

@@ -104,6 +104,56 @@ function getLikeText($postId)
    return ($likeText);
 }
 
+function getDateText($postId)
+{
+   $dateText = "";
+   
+   $database = new CheeseBookDatabase("localhost", "root", "", "cheesebook");
+   
+   $database->connect();
+   
+   if ($database->isConnected())
+   {
+      $post = $database->getPost($postId);
+      $dateTime = $post["dateTime"];
+      
+      $old = new DateTime($dateTime, new DateTimeZone('America/New_York'));
+      $now = new DateTime(null, new DateTimeZone('America/New_York'));
+      
+      $interval = $now->diff($old);
+      
+      $weeks = floor($interval->d / 7);
+      
+      if ($weeks > 0)
+      {
+         $dateText = floor($interval->d / 7) . " weeks ago";
+         $timeInterval = ($interval->d == 1) ? "week" : "weeks";
+         $dateText = $weeks. " " . $timeInterval.  " ago";
+      }
+      else if ($interval->d > 0)
+      {
+         $timeInterval = ($interval->d == 1) ? "day" : "days";
+         $dateText = $interval->d . " " . $timeInterval.  " ago";
+      }
+      else if ($interval->h > 0)
+      {
+         $timeInterval= ($interval->h == 1) ? "hour" : "hours";
+         $dateText = $interval->h . " " . $timeInterval.  " ago";
+      }
+      else if ($interval->i > 0)
+      {
+         $timeInterval= ($interval->i == 1) ? "minute" : "minutes";
+         $dateText = $interval->i . " " . $timeInterval.  " ago";
+      }
+      else
+      {
+         $dateText = "just now";
+      }
+   }
+   
+   return ($dateText);
+}
+
 function getPostHtml($postId)
 {
    $htmlString = "";
@@ -124,7 +174,7 @@ function getPostHtml($postId)
       $dateTime = $post["dateTime"];
       $content = $post["content"];
       
-      $dateString = "3 hours ago";  // TODO
+      $dateString = getDateText($postId);
       
       $likes = $database->getLikes($postId);
       $likeCount = mysqli_num_rows($likes);
