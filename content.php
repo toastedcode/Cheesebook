@@ -61,7 +61,7 @@ HEREDOC;
 <<<HEREDOC
       <div class="sidebar-div">
          <div class="ad-div"><img src="./images/ads/cheeseboarding.jpg"/></div>
-         <div class="unused-ad-div">Your ad here</div>
+         <div class="ad-div"><img src="./images/ads/huwut.jpg"/></div>
          <div class="unused-ad-div">Your ad here</div>
       </div>
 HEREDOC;
