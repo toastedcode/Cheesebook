@@ -38,7 +38,7 @@ HEREDOC;
       
    private static function renderSelectUserInput()
    {
-      $database = new CheeseBookDatabase("localhost", "root", "", "cheesebook");
+      $database = new CheeseBookDatabase();
       
       $database->connect();
       
@@ -53,7 +53,7 @@ HEREDOC;
             <div class="select-user-dropdown-content">
 HEREDOC;
 
-         while($row = $result->fetch_assoc())
+         while ($row = $result->fetch_assoc())
          {
             $userId= $row["id"];
             $userName= $row["firstName"] . " " . $row["lastName"];

@@ -5,7 +5,7 @@ function getUserName($userId)
 {
    $userName = "";
    
-   $database = new CheeseBookDatabase("localhost", "root", "", "cheesebook");
+   $database = new CheeseBookDatabase();
    
    $database->connect();
    
@@ -22,7 +22,7 @@ function getUserImage($userId)
 {
    $userImage = "";
    
-   $database = new CheeseBookDatabase("localhost", "root", "", "cheesebook");
+   $database = new CheeseBookDatabase();
    
    $database->connect();
    
@@ -39,7 +39,7 @@ function getLikeText($postId)
 {
    $likeText = "";
    
-   $database = new CheeseBookDatabase("localhost", "root", "", "cheesebook");
+   $database = new CheeseBookDatabase();
    
    $database->connect();
    
@@ -108,7 +108,7 @@ function getDateText($postId)
 {
    $dateText = "";
    
-   $database = new CheeseBookDatabase("localhost", "root", "", "cheesebook");
+   $database = new CheeseBookDatabase();
    
    $database->connect();
    
@@ -161,7 +161,7 @@ function getPostHtml($postId)
    $userId = $_GET["userId"];
    $userImage = getUserImage($userId);
    
-   $database = new CheeseBookDatabase("localhost", "root", "", "cheesebook");
+   $database = new CheeseBookDatabase();
    
    $database->connect();
    
@@ -263,7 +263,7 @@ if (isset($_GET["action"]))
 {
    $action = $_GET["action"];
    
-   $database = new CheeseBookDatabase("localhost", "root", "", "cheesebook");
+   $database = new CheeseBookDatabase();
    
    $database->connect();
    

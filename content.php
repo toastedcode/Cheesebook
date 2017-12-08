@@ -14,7 +14,7 @@ class ContentPage
    {
       $userId = $_GET["userId"];
       
-      $database = new CheeseBookDatabase("localhost", "root", "", "cheesebook");
+      $database = new CheeseBookDatabase();
       
       $database->connect();
       
@@ -88,7 +88,7 @@ HEREDOC;
 
       ContentPage::renderNewPost();
       
-      $database = new CheeseBookDatabase("localhost", "root", "", "cheesebook");
+      $database = new CheeseBookDatabase();
       
       $database->connect();
       
@@ -113,7 +113,7 @@ HEREDOC;
    {
       $userId = $_GET["userId"];
       
-      $database = new CheeseBookDatabase("localhost", "root", "", "cheesebook");
+      $database = new CheeseBookDatabase();
       
       $database->connect();
       
