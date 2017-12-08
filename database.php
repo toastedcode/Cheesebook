@@ -88,23 +88,28 @@ class MySqlDatabase implements Database
 
 class CheeseBookDatabase extends MySqlDatabase
 {
+   function __construct()
+   {
+      parent::__construct("#####", "#####", "#####", "#####");
+   }
+   
    public function getUsers()
    {
-      $result = $this->query("SELECT * FROM User WHERE celebrity=0 ORDER BY FirstName ASC");
+      $result = $this->query("SELECT * FROM user WHERE celebrity=0 ORDER BY FirstName ASC");
 
       return ($result);
    }
    
    public function getCelebrities()
    {
-      $result = $this->query("SELECT * FROM User WHERE celebrity=1 ORDER BY FirstName ASC");
+      $result = $this->query("SELECT * FROM user WHERE celebrity=1 ORDER BY FirstName ASC");
       
       return ($result);
    }
    
    public function getRandomCelebrity()
    {
-      $result = $this->query("SELECT * FROM User WHERE celebrity=1 ORDER BY RAND()");
+      $result = $this->query("SELECT * FROM user WHERE celebrity=1 ORDER BY RAND()");
       
       return ($result->fetch_assoc());
    }
@@ -126,7 +131,7 @@ class CheeseBookDatabase extends MySqlDatabase
 
    public function getPosts()
    {
-      $result = $this->query("SELECT * FROM Post ORDER BY DateTime DESC");
+      $result = $this->query("SELECT * FROM post ORDER BY DateTime DESC");
 
       return ($result);
    }
