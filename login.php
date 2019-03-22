@@ -106,7 +106,7 @@ HEREDOC;
                <img width="400" src="./images/board.jpg"/>
                <div style="padding:0px 10px 10px 10px;">
                   <h1>Lunchtime Charcuterie Board</h1>
-                  <div style="padding-bottom:20px; font-weight:bold; font-size:20px;">Thursday Dec. 14th @ 12pm</div>
+                  <div style="padding-bottom:20px; font-weight:bold; font-size:20px;">Thursday Dec. 6th @ 12pm</div>
                   <div style="padding-bottom:20px;">Join us for a tour-de-tastebud!  Bring an artisan cheese or a cured/smoked meat to share with your Compunetix lunchtime friends.</div>
                   <div class="horizontal-flex">
                      <img width="30" src="./images/cheddar-small.png"/>
